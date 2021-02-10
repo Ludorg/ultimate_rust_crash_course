@@ -40,5 +40,6 @@ fn area_of(x: i32, y: i32) -> i32 {
     //            `cargo clippy` won't return areas, and `cargo run` will still produce the same
     //            output. See also https://github.com/rust-lang/rust-clippy
 
+    //     return x * y;
     x * y
 }

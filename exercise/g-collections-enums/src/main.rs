@@ -53,21 +53,29 @@ fn main() {
     //      - Greater than 5.0 -- `Shot::Miss`
     for coord in &arrow_coords {
         coord.print_description();
-        let mut d = coord.distance_from_center();
-        if d < 1.0  {
+        /*let mut d = coord.distance_from_center();
+        if d < 1.0 {
             shots.push(Shot::Bullseye)
-        } else if d > 5.0       {
+        } else if d > 5.0 {
             shots.push(Shot::Miss)
         } else {
             shots.push(Shot::Hit(d))
-        }
+        }*/
+
+        // better solution
+        let shot = match coord.distance_from_center() {
+            x if x < 1.0 => Shot::Bullseye,
+            x if x < 5.0 => Shot::Hit(x),
+            _ => Shot::Miss,
+        };
+        shots.push(shot);
     }
 
     let mut total = 0;
     // 3. Finally, loop through each shot in shots and add its points to total
     for shot in shots {
         // println!("{} ", shot.points());
-        total += total + shot.points();
+        total += shot.points();
     }
 
     println!("Final point total is: {}", total);

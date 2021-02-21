@@ -10,6 +10,7 @@
 //
 // You will need to complete 1b as well before you will be able to run this program successfully.
 
+#[derive(Debug)]
 enum Shot {
     Bullseye,
     Hit(f64),
@@ -24,6 +25,9 @@ impl Shot {
         // - return 2 points if `self` is a `Shot::Hit(x)` where x < 3.0
         // - return 1 point if `self` is a `Shot::Hit(x)` where x >= 3.0
         // - return 0 points if `self` is a Miss
+        
+        println!("{:?}", self);
+        println!("{:#?}", self);
         match self {
             Shot::Bullseye => 5,
             Shot::Hit(x) => {
@@ -93,6 +97,7 @@ impl Coord {
         (self.x.powf(2.0) + self.y.powf(2.0)).sqrt()
     }
     fn print_description(&self) {
+        println!("{:?}", self);
         println!(
             "coord is {:.1} away, at ({:.1}, {:.1})",
             self.distance_from_center(),

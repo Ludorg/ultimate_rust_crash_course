@@ -1,0 +1,9 @@
+[package]
+name = "variables"
+version = "2.3.4"
+authors = ["Ludorg@Cyndor_WSL <ludorg@ludorg.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
